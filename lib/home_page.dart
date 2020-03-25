@@ -8,22 +8,31 @@ class HomePage extends StatelessWidget {
         title: Text('Hello Flutter!'),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.lightBlueAccent,
-        child: Center(
-          child: Text(
-            'Hello World!!!',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w600,
-              fontStyle: FontStyle.italic,
-              color: Colors.white,
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.yellow,
-              decorationStyle: TextDecorationStyle.wavy,
-            ),
-          ),
-        ),
+      body: _body(),
+    );
+  }
+
+  _body() {
+    return Container(
+      color: Colors.lightBlueAccent,
+      child: Center(
+        child: _text(),
+      ),
+    );
+  }
+
+  _text() {
+    return Text(
+      'Hello World!!!',
+      style: TextStyle(
+        letterSpacing: 1.8,
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        color: Colors.white,
+        decoration: TextDecoration.underline,
+        decorationColor: Colors.yellow,
+        decorationStyle: TextDecorationStyle.wavy,
       ),
     );
   }

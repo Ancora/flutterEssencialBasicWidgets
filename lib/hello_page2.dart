@@ -7,6 +7,30 @@ class HelloPage2 extends StatelessWidget {
       appBar: AppBar(
         title: Text('Page 2'),
       ),
+      body: _body(context),
     );
+  }
+
+  _body(context) {
+    return Container(
+      color: Colors.lightBlueAccent,
+      child: Center(
+        child: RaisedButton(
+          color: Colors.blue,
+          child: Text(
+            'Voltar',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
+          onPressed: () => _onClickVoltar(context),
+        ),
+      ),
+    );
+  }
+
+  _onClickVoltar(context) {
+    Navigator.pop(context);
   }
 }

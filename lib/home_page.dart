@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterbasicwidgets/pages/hello_page1.dart';
 import 'package:flutterbasicwidgets/pages/hello_page2.dart';
 import 'package:flutterbasicwidgets/pages/hello_page3.dart';
+import 'package:flutterbasicwidgets/utils/nav.dart';
 import 'package:flutterbasicwidgets/widgets/blue_button.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,36 +62,29 @@ class HomePage extends StatelessWidget {
                 onPressed: () => _onClickNavigator(context, HelloPage3())),
           ],
         ),
-        /* Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            BlueButton('Snack', _onClickSnack),
-            BlueButton('Dialog', _onClickDialog),
-            BlueButton('Toast', _onClickToast),
+            BlueButton('Snack', onPressed: _onClickSnack),
+            BlueButton('Dialog', onPressed: _onClickDialog),
+            BlueButton('Toast', onPressed: _onClickToast),
           ],
-        ), */
+        ),
       ],
     );
   }
 
   void _onClickNavigator(BuildContext context, Widget page) async {
-    String s = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return page;
-        },
-      ),
-    );
+    String s = await push(context, page);
 
     print('Page: $s');
   }
 
-  /* _onClickSnack() {}
+  _onClickSnack() {}
 
   _onClickDialog() {}
 
-  _onClickToast() {} */
+  _onClickToast() {}
 
   _img(String img) {
     return Image.asset(

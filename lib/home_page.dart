@@ -16,11 +16,27 @@ class HomePage extends StatelessWidget {
     return Container(
       color: Colors.lightBlueAccent,
       child: Center(
-        child: SizedBox.expand(
-          child: _img(),
-        ),
+        child: _button(),
       ),
     );
+  }
+
+  _button() {
+    return RaisedButton(
+      color: Colors.blue,
+      child: Text(
+        'Ok',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+        ),
+      ),
+      onPressed: () => _onClickOk(),
+    );
+  }
+
+  void _onClickOk() {
+    print('Clicou no botão...');
   }
 
   _img() {
@@ -30,7 +46,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  /* _text() {
+  _text() {
     return Text(
       'Hello World!!!',
       style: TextStyle(
@@ -44,5 +60,5 @@ class HomePage extends StatelessWidget {
         decorationStyle: TextDecorationStyle.wavy,
       ),
     );
-  } */
+  }
 }

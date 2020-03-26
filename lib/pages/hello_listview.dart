@@ -12,18 +12,23 @@ class HelloListView extends StatelessWidget {
   }
 
   _body() {
+    List<Image> imgs = [
+      _img('assets/images/black-german.jpg'),
+      _img('assets/images/dog.jpg'),
+      _img('assets/images/husky.jpg'),
+      _img('assets/images/pug.jpg'),
+      _img('assets/images/rottweiler.jpg'),
+      _img('assets/images/schafer.jpg'),
+    ];
+
     return Container(
       color: Colors.lightBlueAccent,
-      child: ListView(
-        itemExtent: 350,
-        children: <Widget>[
-          _img('assets/images/black-german.jpg'),
-          _img('assets/images/dog.jpg'),
-          _img('assets/images/husky.jpg'),
-          _img('assets/images/pug.jpg'),
-          _img('assets/images/rottweiler.jpg'),
-          _img('assets/images/schafer.jpg'),
-        ],
+      child: ListView.builder(
+        itemCount: imgs.length,
+        itemExtent: 300,
+        itemBuilder: (context, index) {
+          return imgs[index];
+        },
       ),
     );
   }

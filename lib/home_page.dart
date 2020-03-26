@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
 
   _pageView() {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
       height: 300,
       child: PageView(
         children: <Widget>[

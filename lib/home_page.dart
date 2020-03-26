@@ -15,8 +15,13 @@ class HomePage extends StatelessWidget {
   _body() {
     return Container(
       color: Colors.lightBlueAccent,
-      child: Center(
-        child: _button(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          _text(),
+          _img(),
+          _button(),
+        ],
       ),
     );
   }
@@ -41,7 +46,7 @@ class HomePage extends StatelessWidget {
 
   _img() {
     return Image.asset(
-      'assets/images/black-german.jpg',
+      'assets/images/pug.jpg',
       fit: BoxFit.cover,
     );
   }

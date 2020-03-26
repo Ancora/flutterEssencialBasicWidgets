@@ -13,22 +13,25 @@ class HomePage extends StatelessWidget {
   }
 
   _body() {
-    return Container(
-      color: Colors.lightBlueAccent,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          _text(),
-          _pageView(),
-          _buttons(),
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Container(
+        color: Colors.lightBlueAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _text(),
+            _pageView(),
+            _buttons(),
+          ],
+        ),
       ),
     );
   }
 
   _pageView() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+      margin: EdgeInsets.symmetric(vertical: 60),
       height: 300,
       child: PageView(
         children: <Widget>[

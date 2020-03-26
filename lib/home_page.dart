@@ -19,8 +19,24 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           _text(),
-          _img(),
+          _pageView(),
           _buttons(),
+        ],
+      ),
+    );
+  }
+
+  _pageView() {
+    return Container(
+      height: 300,
+      child: PageView(
+        children: <Widget>[
+          _img('assets/images/black-german.jpg'),
+          _img('assets/images/dog.jpg'),
+          _img('assets/images/husky.jpg'),
+          _img('assets/images/pug.jpg'),
+          _img('assets/images/rottweiler.jpg'),
+          _img('assets/images/schafer.jpg'),
         ],
       ),
     );
@@ -67,9 +83,9 @@ class HomePage extends StatelessWidget {
     print('Clicou no botão...');
   }
 
-  _img() {
+  _img(String img) {
     return Image.asset(
-      'assets/images/pug.jpg',
+      img,
       fit: BoxFit.cover,
     );
   }

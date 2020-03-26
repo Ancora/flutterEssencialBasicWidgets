@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterbasicwidgets/hello_page1.dart';
+import 'package:flutterbasicwidgets/hello_page2.dart';
+import 'package:flutterbasicwidgets/hello_page3.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -50,24 +52,44 @@ class HomePage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _button(context, 'ListView'),
-            _button(context, 'Page 2'),
-            _button(context, 'Page 3'),
+            _button(context, 'ListView',
+                () => _onClickNavigator(context, HelloPage1())),
+            _button(context, 'Page 2',
+                () => _onClickNavigator(context, HelloPage2())),
+            _button(context, 'Page 3',
+                () => _onClickNavigator(context, HelloPage3())),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _button(context, 'Snack'),
-            _button(context, 'Dialog'),
-            _button(context, 'Toast'),
+            _button(context, 'Snack', _onClickSnack),
+            _button(context, 'Dialog', _onClickDialog),
+            _button(context, 'Toast', _onClickToast),
           ],
         ),
       ],
     );
   }
 
-  _button(context, String text) {
+  void _onClickNavigator(BuildContext context, Widget page) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return page;
+        },
+      ),
+    );
+  }
+
+  _onClickSnack() {}
+
+  _onClickDialog() {}
+
+  _onClickToast() {}
+
+  _button(context, String text, Function onPressed) {
     //tipo (BuildContext) é opcional no Flutter
     return RaisedButton(
       color: Colors.blue,
@@ -78,18 +100,7 @@ class HomePage extends StatelessWidget {
           fontSize: 20,
         ),
       ),
-      onPressed: () => _onClickOk(context),
-    );
-  }
-
-  void _onClickOk(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return HelloPage1();
-        },
-      ),
+      onPressed: onPressed,
     );
   }
 

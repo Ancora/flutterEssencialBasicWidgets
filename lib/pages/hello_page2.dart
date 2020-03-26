@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasicwidgets/widgets/blue_button.dart';
 
 class HelloPage2 extends StatelessWidget {
   @override
@@ -15,15 +16,8 @@ class HelloPage2 extends StatelessWidget {
     return Container(
       color: Colors.lightBlueAccent,
       child: Center(
-        child: RaisedButton(
-          color: Colors.blue,
-          child: Text(
-            'Voltar',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-          ),
+        child: BlueButton(
+          'Voltar',
           onPressed: () => _onClickVoltar(context),
         ),
       ),

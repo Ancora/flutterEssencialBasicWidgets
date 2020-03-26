@@ -16,12 +16,21 @@ class HomePage extends StatelessWidget {
     return Container(
       color: Colors.lightBlueAccent,
       child: Center(
-        child: _text(),
+        child: SizedBox.expand(
+          child: _img(),
+        ),
       ),
     );
   }
 
-  _text() {
+  _img() {
+    return Image.asset(
+      'assets/images/black-german.jpg',
+      fit: BoxFit.cover,
+    );
+  }
+
+  /* _text() {
     return Text(
       'Hello World!!!',
       style: TextStyle(
@@ -35,5 +44,5 @@ class HomePage extends StatelessWidget {
         decorationStyle: TextDecorationStyle.wavy,
       ),
     );
-  }
+  } */
 }

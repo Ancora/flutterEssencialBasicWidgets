@@ -15,6 +15,7 @@ class HelloListView extends StatelessWidget {
     return Container(
       color: Colors.lightBlueAccent,
       child: ListView(
+        itemExtent: 350,
         children: <Widget>[
           _img('assets/images/black-german.jpg'),
           _img('assets/images/dog.jpg'),

@@ -30,9 +30,11 @@ class HelloListView extends StatelessWidget {
 
     return Container(
       color: Colors.lightBlueAccent,
-      child: ListView.builder(
+      child: GridView.builder(
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemCount: dogs.length,
-        itemExtent: 300,
+        //itemExtent: 300,
         itemBuilder: (context, index) {
           Dog dog = dogs[index];
           return Stack(
@@ -51,7 +53,7 @@ class HelloListView extends StatelessWidget {
                   child: Text(
                     dog.nome,
                     style: TextStyle(
-                      fontSize: 26,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 2,
                       color: Colors.black,

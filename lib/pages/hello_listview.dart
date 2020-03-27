@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbasicwidgets/pages/dog_page.dart';
+import 'package:flutterbasicwidgets/utils/nav.dart';
 
 class Dog {
   String nome;
@@ -81,31 +83,36 @@ class _HelloListViewState extends State<HelloListView> {
 
   _itemView(List<Dog> dogs, int index) {
     Dog dog = dogs[index];
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        _img(dog.foto),
-        Container(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 12),
-            padding: EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              color: Colors.white38,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              dog.nome,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2,
-                color: Colors.black,
+    return GestureDetector(
+      onTap: () {
+        push(context, DogPage(dog));
+      },
+      child: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          _img(dog.foto),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 12),
+              padding: EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: Colors.white38,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                dog.nome,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

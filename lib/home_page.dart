@@ -15,7 +15,19 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: _body(context),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _onClickFAB();
+        },
+        child: Icon(
+          Icons.add,
+        ),
+      ),
     );
+  }
+
+  void _onClickFAB() {
+    print('Adicionar');
   }
 
   _body(BuildContext context) {

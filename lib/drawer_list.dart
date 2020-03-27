@@ -8,6 +8,13 @@ class DrawerList extends StatelessWidget {
         color: Color.fromRGBO(3, 169, 255, 0.5),
         child: ListView(
           children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text('Anderson Rocha'),
+              accountEmail: Text('anderson@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/schafer.jpg'),
+              ),
+            ),
             ListTile(
               leading: Icon(Icons.star),
               title: Text('Favoritos'),

@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 BlueButton('Snack', onPressed: () => _onClickSnack(context)),
-                BlueButton('Dialog', onPressed: _onClickDialog),
+                BlueButton('Dialog', onPressed: () => _onClickDialog(context)),
                 BlueButton('Toast', onPressed: _onClickToast),
               ],
             ),
@@ -97,7 +97,34 @@ class HomePage extends StatelessWidget {
     ));
   }
 
-  _onClickDialog() {}
+  _onClickDialog(context) {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return WillPopScope(
+            onWillPop: () async => false,
+            child: AlertDialog(
+              title: Text('Flutter é muito bom!'),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Cancelar'),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    print('Ok!!!!!!!!');
+                  },
+                  child: Text('Ok'),
+                ),
+              ],
+            ),
+          );
+        });
+  }
 
   _onClickToast() {}
 
